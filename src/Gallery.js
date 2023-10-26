@@ -39,6 +39,7 @@ const Gallery = () => {
   }
 
   return (
+    <>
     <div className="gallery-container">
       <h1 className="mb-4">Unsplash</h1>
       <div className="search-bar">
@@ -57,17 +58,15 @@ const Gallery = () => {
         />
         <button onClick={searchImages}>Search</button> */}
       </div>
-      <div className="image-grid">
-        {searchResult.map((result,index)=>(
-           <Picturecard key={result.id} image={result} />
-        ))}
-      </div>
-      {/* <div className="image-grid">
-        {images.map((image) => (
-          <Picturecard key={image.id} image={image} />
-        ))}
-      </div> */}
     </div>
+    <div>
+      <div className="positionContainer">
+    {searchResult.map((result,index)=>(
+       <Picturecard key={result.id} image={result} />
+    ))}
+      </div>
+  </div>
+  </>
   );
 };
 
